@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>404 - Page Not Found | FreshMart Groceries</title>
+
+    <style>
+        /* Basic page settings */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            color: #18352a;
+
+            /* Colourful background matching index.html */
+            background:
+                radial-gradient(
+                    circle at top left,
+                    rgba(255, 225, 130, 0.85),
+                    transparent 40%
+                ),
+                radial-gradient(
+                    circle at bottom right,
+                    rgba(120, 220, 160, 0.8),
+                    transparent 45%
+                ),
+                linear-gradient(
+                    135deg,
+                    #fff4d6,
+                    #d9f7df,
+                    #dbeafe
+                );
+        }
+
+        /* Error page card */
+        .error-container {
+            width: 100%;
+            max-width: 560px;
+            padding: 40px 28px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.88);
+            border: 1px solid rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 12px 35px rgba(30, 70, 45, 0.15);
+        }
+
+        /* Grocery illustration */
+        .illustration {
+            width: 100%;
+            max-width: 220px;
+            height: auto;
+            margin-bottom: 12px;
+        }
+
+        .error-code {
+            margin: 0;
+            font-size: clamp(4rem, 15vw, 6rem);
+            font-weight: 800;
+            color: #2563eb;
+        }
+
+        h1 {
+            margin: 8px 0 14px;
+            font-size: clamp(1.5rem, 5vw, 2rem);
+            color: #166534;
+        }
+
+        p {
+            line-height: 1.7;
+            color: #526358;
+        }
+
+        .home-button {
+            display: inline-block;
+            margin-top: 18px;
+            padding: 14px 24px;
+            border-radius: 10px;
+            background: #166534;
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            transition: background 0.2s ease;
+        }
+
+        .home-button:hover {
+            background: #14532d;
+        }
+
+        .home-button:focus-visible {
+            outline: 3px solid #2563eb;
+            outline-offset: 4px;
+        }
+
+        .brand {
+            margin-top: 28px;
+            font-size: 0.9rem;
+            color: #166534;
+        }
+
+        @media (max-width: 480px) {
+            .error-container {
+                padding: 30px 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="error-container">
+
+        <!-- Optional grocery illustration -->
+        <img
+            class="illustration"
+            src="assets/grocery1.jpg"
+            alt="Fresh groceries from FreshMart"
+        >
+
+        <p class="error-code">404</p>
+
+        <h1>Oops! Page Not Found</h1>
+
+        <p>
+            Looks like this page is out of stock!
+            The page you're looking for may have moved
+            or doesn't exist.
+        </p>
+
+        <a class="home-button" href="/">
+            &larr; Back to FreshMart Home
+        </a>
+
+        <p class="brand">
+            FreshMart Groceries<br>
+            Fresh food, happy homes!
+        </p>
+
+    </main>
+
+</body>
+</html>
