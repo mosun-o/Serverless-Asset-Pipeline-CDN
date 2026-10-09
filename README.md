@@ -35,9 +35,11 @@ This project demonstrates a serverless asset delivery pipeline built with Amazon
 
 
 # Deployment Steps
-- Provision a private S3 bucket with **Block All Public Access enabled**. This setting prevents public access to the bucket and ensures that access is granted only to authorized CloudFront distribution using Origin Access Control (OAC)
 
 
+- Provision a private S3 bucket with **Block All Public Access** and **Bucket Versioning** enabled. Block All Public Access prevents public access to the bucket, while the S3 bucket policy restricts access to the authorized CloudFront distribution using Origin Access Control (OAC). Bucket Versioning preserves previous versions of objects, enabling recovery from accidental deletions or overwrite
+
+  
 
 
 
