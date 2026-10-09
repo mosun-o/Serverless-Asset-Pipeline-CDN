@@ -38,7 +38,7 @@ This project demonstrates a serverless asset delivery pipeline built with Amazon
 
 ## Create the Private S3 Bucket and Upload Content
 
-- provision a private S3 bucket with **Block All Public Access** and **Bucket Versioning** enabled. Block All Public Access prevents public access to the bucket, while the S3 bucket policy restricts access to the authorized CloudFront distribution using Origin Access Control (OAC). Bucket Versioning preserves previous versions of objects, enabling recovery from accidental deletions or overwrite
+- Provision a private S3 bucket with **Block All Public Access** and **Bucket Versioning** enabled. Block All Public Access prevents public access to the bucket, while the S3 bucket policy restricts access to the authorized CloudFront distribution using Origin Access Control (OAC). Bucket Versioning preserves previous versions of objects, enabling recovery from accidental deletions or overwrite
 
 ![screenshots](media-portfolio/media-portfolio-private-s3bucket.png)
 
@@ -50,10 +50,38 @@ This project demonstrates a serverless asset delivery pipeline built with Amazon
 
 ## Set Up CloudFront with Origin Access Control (OAC)
 
-- create a CloudFront distribution with Origin Access Control(OAC) configured for the S3 bucket origin. Configure the distribution to redirect HTTP requests to HTTPS to ensure secure access to the website, and set index.html as the default root object so that it is served when users access the distribution's root URL
+- Create a CloudFront distribution with Origin Access Control(OAC) configured for the S3 bucket origin. Configure the distribution to redirect HTTP requests to HTTPS to ensure secure access to the website, and set index.html as the default root object so that it is served when users access the distribution's root URL
 
+![screenshots](media-portfolio/media-portfolio-cloudfront-oac.png)
 
+![screenshots](media-portfolio/media-portfolio-viewer-protocol-policy.png)
 
+![screenshots](media-portfolio/media-portfolio-default-root-object.png)
+
+- Ensure that the S3 bucket policy grants access only to the authorized CloudFront distribution 
+
+```
+{
+	"Version": "2008-10-17",
+	"Id": "PolicyForCloudFrontPrivateContent",
+	"Statement": [
+		{
+			"Sid": "AllowCloudFrontServicePrincipal",
+			"Effect": "Allow",
+			"Principal": {
+				"Service": "cloudfront.amazonaws.com"
+			},
+			"Action": "s3:GetObject",
+			"Resource": "arn:aws:s3:::media-portfolio-mosun-o/*",
+			"Condition": {
+				"ArnLike": {
+					"AWS:SourceArn": "arn:aws:cloudfront::834863651662:distribution/E161E9SY7IYPEM"
+				}
+			}
+		}
+	]
+}
+```
 
 
 
