@@ -87,11 +87,14 @@ This project demonstrates a serverless asset delivery pipeline built with Amazon
 
 - The S3 lifecycle rule manages the application's media files by automatically transitioning objects between different S3 storage classes to optimize storage costs
 
+![screenshots](media-portfolio/media-portfolio-lifecycle-rule-configuration.png)
+
+![screenshots](media-portfolio/media-portfolio-lifecycle-rule-actions.png)
+
+![screenshots](media-portfolio/media-portfolio-lifecycle-rule-storage-classes-transitions.png)
 
 
-
-
-
+- Copy the CloudFront distribution domain name from the Distributions tab and open it in a web browser to verify that the application content is served correctly over HTTPS through CloudFront
 
 
 
