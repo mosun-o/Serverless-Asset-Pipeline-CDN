@@ -36,11 +36,15 @@ This project demonstrates a serverless asset delivery pipeline built with Amazon
 
 # Deployment Steps
 
+## Create the Private S3 Bucket and Upload Content
 
-- Provision a private S3 bucket with **Block All Public Access** and **Bucket Versioning** enabled. Block All Public Access prevents public access to the bucket, while the S3 bucket policy restricts access to the authorized CloudFront distribution using Origin Access Control (OAC). Bucket Versioning preserves previous versions of objects, enabling recovery from accidental deletions or overwrite
+- provision a private S3 bucket with **Block All Public Access** and **Bucket Versioning** enabled. Block All Public Access prevents public access to the bucket, while the S3 bucket policy restricts access to the authorized CloudFront distribution using Origin Access Control (OAC). Bucket Versioning preserves previous versions of objects, enabling recovery from accidental deletions or overwrite
 
-  
+![screenshots](media-portfolio/media-portfolio-private-s3bucket.png)
 
+![screenshots](media-portfolio/media-portfolio-s3bucket-versioning.png)
+
+- Upload a static web application consisting of index.html which serves as the entry point and main page of the application, error.html which provides a custom error page for displaying error messages, and an assets/ folder that contains the application's static media files
 
 
 
