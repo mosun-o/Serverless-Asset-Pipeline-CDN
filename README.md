@@ -46,9 +46,11 @@ This project demonstrates a serverless asset delivery pipeline built with Amazon
 
 - Upload a static web application consisting of index.html which serves as the entry point and main page of the application, error.html which provides a custom error page for displaying error messages, and an assets/ folder that contains the application's static media files
 
+![screenshots](media-portfolio/media-portfolio-s3-objects.png)
 
+## Set Up CloudFront with Origin Access Control (OAC)
 
-
+- create a CloudFront distribution with Origin Access Control(OAC) configured for the S3 bucket origin. Configure the distribution to redirect HTTP requests to HTTPS to ensure secure access to the website, and set index.html as the default root object so that it is served when users access the distribution's root URL
 
 
 
