@@ -96,8 +96,10 @@ This project demonstrates a serverless asset delivery pipeline built with Amazon
 
 - Copy the CloudFront distribution domain name from the Distributions tab and open it in a web browser to verify that the application content is served correctly over HTTPS through CloudFront
 
+![screenshots](media-portfolio/media-portfolio-cloudfront-distribution-domain-name.png)
 
 
+![screenshots](media-portfolio/media-portfolio-website-served-through-cloudfront.png)
 
 
 
