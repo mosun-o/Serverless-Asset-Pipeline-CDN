@@ -89,6 +89,15 @@ This project implements a serverless asset delivery pipeline on AWS for hosting 
 
 ![screenshots](media-portfolio/media-portfolio-website-served-through-cloudfront.png)
 
+## Lessons Learned
 
+- Learned how to build a serverless asset delivery pipeline using Amazon S3 and CloudFront without managing web servers.
+- Explored how CloudFront OAC secures access to a private S3 bucket.
+- Understood how CloudFront caching and HTTPS improve content delivery performance and security.
+- Gained experience configuring S3 lifecycle rules to optimize storage costs.
+- Learned how S3 bucket versioning supports recovery from accidental deletions and overwrites.
+
+
+This project strengthened my understanding of AWS cloud architecture, storage security, content delivery, and serverless infrastructure design
 
 
