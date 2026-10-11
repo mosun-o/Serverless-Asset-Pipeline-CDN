@@ -2,7 +2,7 @@ This project implements a serverless asset delivery pipeline on AWS for hosting 
 
 
 
-## Architecture Diagram
+## Architecture Overview 
 
                       [ Internet Users ]
                                │
